@@ -1,0 +1,83 @@
+name: Security Report
+description: File a security report here
+title: "[SECURITY]: "
+labels: ["security"]
+assignees: ["<My Github Username>"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this security report!!!
+  - type: checkboxes
+    id: new-security
+    attributes:
+      label: Is there an existing issue for this?
+      description: Please search to see if an issue already exists for the bug you encountered.
+      options:
+      - label: I have searched the existing issues
+        required: true
+  - type: markdown
+    attributes:
+      value: |
+        ***
+  - type: input
+    id: security-cve
+    attributes:
+      label: Please list an CVE's you think may be ralated
+      description: Please list any know CVE reports for this suspected security related issue/
+  - type: textarea
+    id: security-description
+    attributes:
+      label: Description of the security issue
+      description: Tell us what bug you encountered and what should have happened
+    validations:
+      required: true
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps To Reproduce
+      description: Steps to reproduce the behavior.
+      placeholder: |
+        1. In this environment...
+        2. With this config...
+        3. Run '...'
+        4. See error...
+    validations:
+      required: false
+  - type: textarea
+    id: security-results
+    attributes:
+      label: Expected Results
+      description: What you expect to happen instead of what is actually happening
+    validations:
+      required: false
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact
+      description: How severe is this issue?
+      multiple: false
+      options:
+        - Low
+        - Medium
+        - High
+        - Critical
+    validations:
+      required: true
+  - type: textarea
+    id: files
+    attributes:
+      label: Location of impacted source code (if known)
+      description: Links to code where this issue is present
+    validations:
+      required: false
+  - type: dropdown
+    id: versions
+    attributes:
+      label: Which version of the app are you using?
+      description: If this issue is occurring on more than 1 version of the app, select the appropriate versions.
+      multiple: true
+      options:
+       - 1.0.0
+    validations:
+      required: true
